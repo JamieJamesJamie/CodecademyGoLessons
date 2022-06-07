@@ -1,6 +1,11 @@
 package main
 
+import "fmt"
+
 // Create the function fuelGauge() here
+func fuelGauge(fuel int) {
+	fmt.Println("You have this much fuel left:", fuel)
+}
 
 // Create the function calculateFuel() here
 
@@ -12,6 +17,10 @@ package main
 
 func main() {
 	// Test your functions!
+	fmt.Println("Test 'fuelGauge()':")
+	fuelGauge(10)
+	fuelGauge(0)
+	fuelGauge(-1)
 
 	// Create `planetChoice` and `fuel`
 
