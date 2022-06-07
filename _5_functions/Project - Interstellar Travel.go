@@ -26,6 +26,10 @@ func calculateFuel(planet string) int {
 }
 
 // Create the function greetPlanet() here
+func greetPlanet(planet string) {
+	fmt.Printf("Welcome to the planet %s!", planet)
+	fmt.Println()
+}
 
 // Create the function cantFly() here
 
@@ -45,6 +49,10 @@ func main() {
 	fmt.Println("Mars:", calculateFuel("Mars"))
 	fmt.Println("Jupiter:", calculateFuel("Jupiter"))
 	fmt.Println()
+
+	fmt.Println("Test 'greetPlanet()':")
+	greetPlanet("Mercury")
+	greetPlanet("")
 
 	// Create `planetChoice` and `fuel`
 
