@@ -46,6 +46,14 @@ func main() {
 		total += fastFoodMenuContains(fastfoodMenu, order)
 	}
 
+	var numBillsToPay uint
+
+	for amount := total; amount > 0; amount -= 2 {
+		numBillsToPay++
+	}
+
+	fmt.Println("Number of £2 notes to pay:", numBillsToPay)
+
 	// WRITE DEFINITE LOOP COUNTING $2 BILLS BELOW
 	for amount := total; amount > 0; amount -= 2 {
 		fmt.Println("Amount in GBP(£) to be paid to cashier:", amount)
