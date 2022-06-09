@@ -22,6 +22,17 @@ func contains(menu []string, order string) bool {
 	return false
 }
 
+func fastFoodMenuContains(fastFoodMenu []string, order string) int {
+	if contains(fastFoodMenu, order) {
+		return 4
+	} else if order == "quit" {
+		fmt.Println("Quitting...")
+	} else {
+		fmt.Println(order, "is not on the menu.")
+	}
+	return 0
+}
+
 func main() {
 	fastfoodMenu := []string{"Burgers", "Nuggets", "Fries"}
 	fmt.Println("The fast food menu has these items:", fastfoodMenu)
@@ -32,14 +43,7 @@ func main() {
 
 	for order != "quit" {
 		order = askOrder()
-
-		if contains(fastfoodMenu, order) {
-			total += 4
-		} else if order == "quit" {
-			fmt.Println("Quitting...")
-		} else {
-			fmt.Println(order, "is not on the menu.")
-		}
+		total += fastFoodMenuContains(fastfoodMenu, order)
 	}
 
 	// WRITE DEFINITE LOOP COUNTING $2 BILLS BELOW
