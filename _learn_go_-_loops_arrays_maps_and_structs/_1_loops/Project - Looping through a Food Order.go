@@ -35,6 +35,8 @@ func main() {
 
 		if contains(fastfoodMenu, order) {
 			total += 4
+		} else if order == "quit" {
+			fmt.Println("Quitting...")
 		} else {
 			fmt.Println(order, "is not on the menu.")
 		}
