@@ -13,6 +13,14 @@ func askOrder() string {
 }
 
 // WRITE CONTAINS FUNCTION BELOW
+func contains(menu []string, order string) bool {
+	for _, menuItem := range menu {
+		if order == menuItem {
+			return true
+		}
+	}
+	return false
+}
 
 func main() {
 	fastfoodMenu := []string{"Burgers", "Nuggets", "Fries"}
@@ -22,7 +30,21 @@ func main() {
 	var order string
 	// WRITE INDEFINITE LOOP ASKING FOR ORDERS BELOW
 
+	for order != "quit" {
+		order = askOrder()
+
+		if contains(fastfoodMenu, order) {
+			total += 4
+		} else {
+			fmt.Println(order, "is not on the menu.")
+		}
+	}
+
 	// WRITE DEFINITE LOOP COUNTING $2 BILLS BELOW
+	for amount := total; amount > 0; amount -= 2 {
+		fmt.Println("Amount in GBP(£) to be paid to cashier:", amount)
+		fmt.Println("Giving £2 to cashier...")
+	}
 
 	fmt.Println("The total for the order is", total)
 }
