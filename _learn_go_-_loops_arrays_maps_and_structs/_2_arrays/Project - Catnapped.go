@@ -1,6 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func getRandomElement(slice []string) string {
+	index := rand.Intn(len(slice))
+	return slice[index]
+}
 
 func main() {
 	guests := [4]string{"Person1", "Person2", "Person3", "Person4"}
@@ -8,4 +17,6 @@ func main() {
 
 	fmt.Println("Guests:", guests)
 	fmt.Println("Cat's objects:", catObjects)
+
+	rand.Seed(time.Now().UnixNano())
 }
