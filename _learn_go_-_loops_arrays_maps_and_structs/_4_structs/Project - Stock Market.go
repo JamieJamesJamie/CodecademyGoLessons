@@ -16,6 +16,11 @@ type Stock struct {
 	price float32
 }
 
+func (stock *Stock) updateStock() {
+	change := randomNumberGen(-10000, 10000)
+	stock.price += change
+}
+
 func main() {
 	rand.Seed(time.Now().UnixNano())
 	// Function calls go here
