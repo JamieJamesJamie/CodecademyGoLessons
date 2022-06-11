@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
 )
@@ -19,6 +20,12 @@ type Stock struct {
 func (stock *Stock) updateStock() {
 	change := randomNumberGen(-10000, 10000)
 	stock.price += change
+}
+
+func displayMarket(market []Stock) {
+	for _, stock := range market {
+		fmt.Println(stock)
+	}
 }
 
 func main() {
